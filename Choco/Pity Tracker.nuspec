@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>NomeDelPacchetto</id>
+    <version>1.0.0</version>
+    <title>Titolo del Pacchetto</title>
+    <authors>Tuo Nome</authors>
+    <owners>Tuo Nome</owners>
+    <licenseUrl></licenseUrl>
+    <projectUrl>URL del Progetto</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Breve Descrizione del Pacchetto</description>
+    <tags>Tag1 Tag2 Tag3</tags>
+    <dependencies>
+      <dependency id="NomeDipendenza1" version="1.0.0" />
+      <dependency id="NomeDipendenza2" version="2.0.0" />
+    </dependencies>
+  </metadata>
+</package>
