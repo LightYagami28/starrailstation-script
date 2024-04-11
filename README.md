@@ -22,6 +22,13 @@ To use the ⭐ Star Rail Station Pity Script, follow these steps:
 4. **Follow Prompted Instructions**:
    - The script may prompt you for additional input or display messages during execution. Follow the on-screen instructions as needed.
 
+## Security Enhancements :lock:
+To enhance security, the script has been updated with the following measures:
+
+- Set TLS version to TLS 1.2 for secure communication.
+- Download the script content securely using `Invoke-RestMethod`.
+- Use English comments for improved readability and understanding.
+
 ## Requirements
 - This script requires PowerShell to be installed on your system.
 
