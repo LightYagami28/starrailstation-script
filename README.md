@@ -38,3 +38,10 @@ To enhance security, the script has been updated with the following measures:
 - If you encounter any errors or issues, refer to the error messages displayed or consult the script's documentation.
 
 By following these instructions, you can effectively run the ⭐ Star Rail Station Pity Script to execute the "Pity Tracker.ps1" PowerShell script.
+
+## Credits
+Original idea by:
+- [@exterpolation](https://github.com/exterpolation)<br><br>
+
+Special thanks to:
+- [@Alessandro Maule](https://github.com/LightYagami28)
