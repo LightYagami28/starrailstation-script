@@ -1,48 +1,42 @@
-<<<<<<< HEAD
-# Set TLS version to TLS 1.2 for secure communication
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+# Imposta il protocollo di sicurezza su TLS 1.3 per una comunicazione sicura
+[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls13
 
-# Open browser to a specific URL
+# Apri il browser su un URL specifico
 Start-Process "https://starrailstation.com/en/warp#import"
-=======
-# Set security protocol to TLS 1.2 for secure communication
-[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
-# Open the browser to a specific URL
-Start-Process https://starrailstation.com/en/warp#import
->>>>>>> origin/patch-1
-
-# Wait for the browser to load (adjust this delay if needed)
+# Attendi che il browser carichi (modifica il tempo di attesa se necessario)
 Start-Sleep -Seconds 1
 
 try {
-<<<<<<< HEAD
-    # Download and execute script from the Gist
-    $scriptUrl = "https://gist.githubusercontent.com/Star-Rail-Station/2512df54c4f35d399cc9abbde665e8f0/raw/get_warp_link_os.ps1?cachebust=srs"
-    
-    # Download script content securely
-    $scriptContent = Invoke-RestMethod -Uri $scriptUrl
-    
-    # Execute downloaded script
-    Invoke-Expression $scriptContent
-
-} catch {
-    # Display error message if an exception occurs
-    Write-Error "An error occurred: $($_.Exception.Message)"
-=======
-    # Download and execute the script from the Gist
+    # Configura il WebClient per il download sicuro e imposta un timeout e un User-Agent
     $webClient = New-Object Net.WebClient
+    $webClient.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)")
+    $webClient.Encoding = [System.Text.Encoding]::UTF8
+    $webClient.DownloadTimeout = 15000  # Timeout di 15 secondi per il download
+
+    # URL dello script da scaricare
     $scriptUrl = "https://gist.githubusercontent.com/Star-Rail-Station/2512df54c4f35d399cc9abbde665e8f0/raw/get_warp_link_os.ps1?cachebust=srs"
+
+    # Scarica il contenuto dello script
     $scriptContent = $webClient.DownloadString($scriptUrl)
 
-    # Execute the downloaded script
+    # Controlla se lo script è stato scaricato correttamente
+    if ([string]::IsNullOrEmpty($scriptContent)) {
+        throw "Il contenuto dello script è vuoto o non valido."
+    }
+
+    # Esegui lo script scaricato in modo sicuro
     Invoke-Expression $scriptContent
 
 } catch {
-    # Handle any errors and display an error message
-    Write-Error "An error occurred: $_.Exception.Message"
->>>>>>> origin/patch-1
+    # Gestisci gli errori e visualizza un messaggio di errore dettagliato
+    Write-Error "Si è verificato un errore: $($_.Exception.Message)"
+} finally {
+    # Libera le risorse utilizzate dal WebClient
+    if ($webClient -ne $null) {
+        $webClient.Dispose()
+    }
 }
 
-# Exit the script
-Stop-Process -Id $PID
+# Esci dallo script in modo sicuro
+Stop-Process -Id $PID -Force

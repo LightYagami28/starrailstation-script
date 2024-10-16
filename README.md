@@ -1,47 +1,43 @@
 # ⭐ Star Rail Station - Pity Script
 
 ## Overview
-The ⭐ Star Rail Station Pity Script is designed to streamline the execution of a PowerShell script named "Pity Tracker.ps1". This guide provides instructions on how to set up and run the script effectively.
+The **Star Rail Station Pity Script** simplifies the execution of a PowerShell script called `Pity Tracker.ps1`. This guide provides step-by-step instructions to set up and run the script effectively.
 
 ## Usage Instructions
-To use the ⭐ Star Rail Station Pity Script, follow these steps:
 
-1. **Download Files**:
-   - Copy the shortcut (.lnk) file to your desktop.
-   - Place the PowerShell script (.ps1) file named "Pity Tracker.ps1" in the root directory of your "C:\" drive.
+### Download and Set Up:
+- **Shortcut File**: Copy the `.lnk` shortcut file to your desktop.
+- **PowerShell Script**: Place the `Pity Tracker.ps1` file in the root directory of your `C:\` drive.
 
-2. **Execute the Shortcut**:
-   - Double-click the shortcut icon on your desktop to launch the PowerShell script.
+### Run the Script:
+- Double-click the desktop shortcut to launch the PowerShell script.
 
-3. **Expressions for the Shortcut**:
-   - In case you encounter any issues with the shortcut, here are the expressions used:
-     ```
-     C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoExit -ExecutionPolicy Bypass -File "C:\Pity Tracker.ps1"
-     ```
+### Shortcut Configuration:
+- If the shortcut doesn't work, ensure the following command is used in its properties:
 
-4. **Follow Prompted Instructions**:
-   - The script may prompt you for additional input or display messages during execution. Follow the on-screen instructions as needed.
+    ```
+    C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoExit -ExecutionPolicy Bypass -File "C:\Pity Tracker.ps1"
+    ```
 
-## Security Enhancements :lock:
-To enhance security, the script has been updated with the following measures:
+### Interact with the Script:
+- Follow any on-screen prompts or instructions during script execution.
 
-- Set TLS version to TLS 1.2 for secure communication.
-- Download the script content securely using `Invoke-RestMethod`.
-- Use English comments for improved readability and understanding.
+## Security Measures 🔒
+The script includes the following security enhancements:
 
-## Requirements
-- This script requires PowerShell to be installed on your system.
+- **TLS 1.2**: Ensures secure communication by enforcing TLS version 1.2.
+- **Secure Downloads**: Downloads external content using `Invoke-RestMethod` over secure channels.
+- **English Comments**: All comments in the script are written in English to improve accessibility and understanding.
 
-## Notes
-- Make sure to review and understand the script's functionality before executing it.
-- Always exercise caution when running scripts downloaded from the internet.
-- If you encounter any errors or issues, refer to the error messages displayed or consult the script's documentation.
+## System Requirements
+- **PowerShell**: Ensure PowerShell is installed and available on your system.
+- **Operating System**: Windows-based environment is required for running the script.
 
-By following these instructions, you can effectively run the ⭐ Star Rail Station Pity Script to execute the "Pity Tracker.ps1" PowerShell script.
+## Important Notes
+- **Review the Script**: Always review and understand the script's code before running it.
+- **Security Awareness**: Be cautious when running scripts downloaded from the internet. Consider executing them in a controlled environment.
+- **Troubleshooting**: If errors occur, refer to the PowerShell error messages or consult the official documentation for assistance.
 
 ## Credits
-Original idea by:
-- [@exterpolation](https://github.com/exterpolation)<br><br>
-
-Special thanks to:
-- [@Alessandro Maule](https://github.com/LightYagami28)
+- **Original Idea**: [@exterpolation](https://github.com/exterpolation)
+- **Special Thanks**: [@Alessandro Maule](https://github.com/LightYagami28)
